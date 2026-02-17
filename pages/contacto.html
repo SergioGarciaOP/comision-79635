@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacto</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>  /* pone el color que quiero en sustitucion del que viene con bt */
+
+        .fondo-beige { background-color: #F5F5DC !important; }
+        .bg-naranja { background-color: #FF8C00 !important; }
+        .btn-naranja { background-color: #FF8C00; border-color: #FF8C00; color: white; }
+        .btn-naranja:hover { background-color: #e07b00; border-color: #e07b00; color: white; }
+    </style>
+</head>
+
+<body class="fondo-beige">
+
+<header class="header-index">
+    <nav class="navbar navbar-expand-lg bg-naranja">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#menuContacto" aria-controls="menuContacto" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span> Menú
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuContacto">
+                <ul class="nav nav-pills nav-fill p-2 w-100" id="pillNav2"> 
+                    <li class="nav-item">
+                        <a class="nav-link " href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="merchandising.html">Merchandising</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                
+                <div class="card shadow-sm">
+                    <div class="card-header bg-naranja text-white text-center">
+                        <h3>Contáctanos</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre:</label>
+                                <input type="text" class="form-control" id="name" name="name">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensaje:</label>
+                                <textarea class="form-control" id="message" name="message" rows="4"></textarea> 
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+                                <label class="form-check-label" for="newsletter">Molestar con emails</label>
+                            </div>
+
+                            <button type="submit" class="btn btn-naranja w-100">Enviar</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-dark text-white text-center py-3 mt-auto">
+    <div class="container">
+        <address class="mb-1">
+            E-Mail: <a href="mailto:sergiogarciaop88@gmail.com" class="text-info text-decoration-none">caminodelosfaros@gmail.com</a>
+        </address>
+        <small><time datetime="2026-01-05">2026 - Sergio</time></small>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

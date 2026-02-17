@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    /*header general */
+
+.header-index {
+   background-color: orange;
+}
+
+
+.header-index nav {
+    padding: 20px;
+}
+
+.header-index nav ul {
+    list-style: none;      
+    margin: 5px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+
+
+
+    /* navbar general */
+
+
+.index nav {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between; 
+    list-style: none;
+    font-size: 2vh;
+}
+    
+
+/* index.html */
+    
+.img-encabezado {
+   width: 100%;
+}
+
+
+
+
+
+
+    /* valores generales */
+
+
+h1, h2, h3 {
+    text-align: center; /* Centrar todos los títulos de los "h" */
+}
+
+nav a {
+    color: black;
+}
+
+section p {
+
+    color: black; 
+}
+
+
+figure {
+    margin-top: 20px;   /* con esto le damos márgenes a lo que se encuentre dentro de figure */
+    margin-bottom: 20px;
+}
+
+
+
+#fecha {
+    background-color: black; /* Color del fondo */
+    color: white; /* Color de las letras */
+    text-align: center; /* Centramos el texto */
+}
+
+#derecha {      
+    text-align: right; /* Lo centro a la derecha */
+    text-decoration: none;
+}
+
+footer a {
+    color: red;
+    text-decoration: none; /* Le quito el fondo azul al enlace */
+}
+
+
+#esquinaderecha{
+    text-align: right;
+    color: green;
+}
+
+
+    /* valores para merchandising */
+
+.merchandising {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.merchandising p {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin: 0 10px 10px;
+    font-family: cursive;
+    align-items: center;
+    color: rgb(0, 0, 0);
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+
+}
+
+.imagen img{ 
+    width: 500px;
+}
+
+
+.merchandising button {
+    display: inline-block;
+    justify-content: center;
+    flex-basis: 25px;
+    margin-bottom: 25px;
+    width: 100px;
+    height: 100px;
+    font-size: large;
+}
+
+.merch-h1 {
+    margin-bottom: 20px;
+}
+
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;/* Tipografía */
+    background-color: beige;
+}
+
+
+
+.index {
+    text-align: center;
+}
+
+
+
+.volver-arriba {
+    font-size: 25px;
+}
+
+
+    /* Media Query para que sea responsive */
+
+@media (min-width:768px) {
+    
+    .body-merch img {
+        width: 350px
+    }
+    .merchandising button {
+    display: inline-block;
+    justify-content: center;
+    flex-basis: 25px;
+    margin-bottom: 25px;
+    width: 60px;
+    height: 60px;
+    font-size: small;
+}
+}
