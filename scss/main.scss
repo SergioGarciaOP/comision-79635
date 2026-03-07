@@ -1,0 +1,133 @@
+/* scss/main.scss - Archivo principal que SASS traduce a CSS */
+
+// 1. IMPORTACIONES
+@import 'variables';
+
+// 2. RESETEO GLOBAL
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// 3. ESTILOS BASE
+body {
+    font-family: $fuente-principal;
+    background-color: $color-fondo;
+    color: $color-texto;
+}
+
+// 4. ESTILOS DEL INICIO (HERO)
+.seccion-hero {
+    display: flex;
+    flex-direction: column; /* MÓVIL PRIMERO: Uno arriba del otro */
+    align-items: center;
+    text-align: center; /* Texto centrado para móvil */
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+
+    /* MAGIA RESPONSIVE: Si la pantalla es más ancha que una tablet (768px) */
+    @media (min-width: 768px) {
+        flex-direction: row; /* PC: Uno al lado del otro */
+        text-align: left; /* PC: Texto a la izquierda */
+        padding: 5rem 2rem;
+        gap: 3rem;
+    }
+
+    .caja-texto {
+        flex: 1;
+
+        h1 {
+            color: $color-primario;
+            font-size: 2.2rem; /* Tamaño más humilde para celulares */
+            margin-bottom: 1rem;
+            line-height: 1.2;
+
+            @media (min-width: 768px) {
+                font-size: 3rem; /* Tamaño grande pero equilibrado para PC */
+            }
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: $color-texto;
+            line-height: 1.6;
+        }
+    }
+
+    .caja-imagen {
+        flex: 1;
+        width: 100%;
+
+        .imagen-destacada {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+    }
+}
+
+
+// 5. ESTILOS DEL FOOTER (VERSIÓN COMPACTA TIPO AMAZON)
+.pie-pagina-ancho {
+    background-color: $color-footer; 
+    color: #ffffff; 
+    /* Redujimos el padding (espacio interno) para que no sea tan alto */
+    padding: 2rem 0 0.5rem 0; 
+    margin-top: auto; /* Esto ayuda a empujarlo bien abajo */
+
+    .contenedor-footer {
+        display: flex;
+        flex-direction: column; 
+        gap: 1.5rem; /* Menos espacio entre columnas en móvil */
+        padding: 0 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center; 
+
+        @media (min-width: 768px) {
+            flex-direction: row; 
+            text-align: left; 
+            justify-content: space-between;
+            gap: 2rem; /* Espacio moderado en PC */
+        }
+
+        .columna-footer {
+            flex: 1; 
+
+            h3 {
+                color: $color-primario; 
+                font-size: 0.95rem; /* Títulos mucho más pequeños y sutiles */
+                margin-bottom: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px; /* Un poquito de espacio entre letras para darle elegancia */
+            }
+
+            p, ul, li {
+                font-size: 0.8rem; /* Letra tipo "letra chica" corporativa */
+                color: #adb5bd; 
+                list-style: none; 
+                margin-bottom: 0; /* Quitamos márgenes extra */
+            }
+
+            li {
+                margin-bottom: 0.3rem; /* Muy poquito espacio entre items de la lista */
+            }
+        }
+    }
+
+    .copyright-footer {
+        text-align: center;
+        padding-top: 1rem; /* Menos espacio aquí también */
+        margin-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1); 
+        
+        p {
+            font-size: 0.75rem; /* Texto de copyright súper pequeñito */
+            color: #6c757d; /* Un gris un poco más oscuro para que pase desapercibido */
+            margin: 0;
+        }
+    }
+}
