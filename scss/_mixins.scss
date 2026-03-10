@@ -1,0 +1,29 @@
+// scss/_mixins.scss
+
+// Mixin para centrar elementos con Flexbox rápidamente
+@mixin flex-centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Mixin para crear sombras personalizadas
+@mixin sombra-suave {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+// scss/_mixins.scss
+@mixin flex-centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fondo-parallax($url) {
+    background-image: url($url);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

@@ -12,7 +12,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">Camiño dos Faros</a>
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="../index.html">
+                <img src="../img/LogoTraski.png" alt="Logo Traski" width="70" height="70" class="me-2">
+                Camiño dos Faros
+            </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,37 +37,184 @@
         </div>
     </nav>
 
-    <main class="contenedor-principal flex-grow-1">
-        <h1 class="titulo-seccion">Las Etapas del Camino</h1>
+    <main class="container mt-5 mb-5 flex-grow-1">
+        <h1 class="text-center mb-3" style="color: #0b5ed7;">Las 8 Etapas del Camiño</h1>
+        <p class="text-center text-muted mb-5">Haz clic en cada etapa para desplegar la información, conocer la distancia y descubrir los secretos de la Costa da Morte.</p>
         
-        <section class="grilla-etapas">
-            <article class="tarjeta-etapa">
-                <img src="" alt="Paisaje de la Etapa 1 en Malpica" class="imagen-etapa">
-                <div class="contenido-tarjeta">
-                    <h2>Etapa 1: Malpica - Niñóns</h2>
-                    <p>21.9 km. Una etapa rompepiernas para empezar, recorriendo toda la costa de Malpica pasando por el Faro de Punta Nariga.</p>
+        <div class="accordion shadow-sm" id="acordeonEtapas">
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingUno">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUno" aria-expanded="false" aria-controls="collapseUno">
+                        Etapa 1: Malpica - Niñóns (21.9 km)
+                    </button>
+                </h2>
+                <div id="collapseUno" class="accordion-collapse collapse" aria-labelledby="headingUno" data-bs-parent="#acordeonEtapas">
+                    <div class="accordion-body">
+                        <strong>Dificultad: Alta.</strong> La ruta comienza en el puerto de Malpica, ofreciendo vistas panorámicas de las Islas Sisargas. Tras recorrer senderos de pescadores y cruzar el río en Seiruga, afrontaremos la dura subida al mágico Faro de Punta Nariga. El tramo final, espectacular pero exigente, nos guiará entre acantilados hasta la Playa de Niñóns. <em>¡Aviso: asegúrate de terminar esta etapa de día!</em>
+                        
+                        <div class="mt-3 mb-3">
+                            <a href="https://es.wikiloc.com/rutas-senderismo/o-camino-dos-faros-etapa-1-malpica-ninons-track-oficial-agosto-2020-54497150" target="_blank" class="btn btn-success btn-sm fw-bold shadow-sm">
+                                📍 Ver track oficial en Wikiloc
+                            </a>
+                        </div>
+                        
+                        <img src="../img/FotoEtapa1.jpg" alt="Paisaje Etapa 1" class="img-fluid rounded" style="max-height: 300px; width: 100%; object-fit: cover;">
+                    </div>
                 </div>
-            </article>
+            </div>
 
-            <article class="tarjeta-etapa">
-                <img src="" alt="Paisaje de la Etapa 2 hacia Ponteceso" class="imagen-etapa">
-                <div class="contenido-tarjeta">
-                    <h2>Etapa 2: Niñóns - Ponteceso</h2>
-                    <p>26.1 km. Etapa dura pero espectacular pasando por el Faro do Roncudo y el estuario del Río Anllóns.</p>
-                </div>
-            </article>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingDos">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDos" aria-expanded="false" aria-controls="collapseDos">
+                        Etapa 2: Niñóns - Ponteceso (26.1 km)
+                    </button>
+                </h2>
+                <div id="collapseDos" class="accordion-collapse collapse" aria-labelledby="headingDos" data-bs-parent="#acordeonEtapas">
+                    <div class="accordion-body">
+                        <strong>Dificultad: Alta.</strong> Etapa espectacular pasando por el Faro do Roncudo (famoso por sus percebes) y terminando en el tranquilo estuario del Río Anllóns y las dunas de A Barra.
+                        
+                        <div class="mt-3 mb-3">
+                            <a href="https://es.wikiloc.com/rutas-senderismo/camino-dos-faros-etapa-2-playa-de-ninons-ponteceso-16769098" target="_blank" class="btn btn-success btn-sm fw-bold shadow-sm">
+                                📍 Ver track oficial en Wikiloc
+                            </a>
+                        </div>
 
-            <article class="tarjeta-etapa">
-                <img src="" alt="Faro de Cabo Finisterre" class="imagen-etapa">
-                <div class="contenido-tarjeta">
-                    <h2>Etapa 8: Nemiña - Cabo Finisterre</h2>
-                    <p>26.2 km. El gran final llegando al mítico Faro de Finisterre, el fin del mundo antiguo.</p>
+                        <img src="../img/FotoEtapa2.jpg" alt="Paisaje Etapa 2" class="img-fluid rounded" style="max-height: 300px; width: 100%; object-fit: cover;">
+                    </div>
                 </div>
-            </article>
-        </section>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTres">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTres" aria-expanded="false" aria-controls="collapseTres">
+                        Etapa 3: Ponteceso - Laxe (25.2 km)
+                    </button>
+                </h2>
+                <div id="collapseTres" class="accordion-collapse collapse" aria-labelledby="headingTres" data-bs-parent="#acordeonEtapas">
+                    <div class="accordion-body">
+                        <strong>Dificultad: Media.</strong> Un recorrido que combina la magia del interior del estuario del Anllóns, los dólmenes antiguos y la impresionante llegada al Faro de Laxe.
+                        
+                        <div class="mt-3 mb-3">
+                            <a href="https://es.wikiloc.com/rutas-senderismo/camino-dos-faros-etapa-3-ponteceso-laxe-17175727" target="_blank" class="btn btn-success btn-sm fw-bold shadow-sm">
+                                📍 Ver track oficial en Wikiloc
+                            </a>
+                        </div>
+
+                        <img src="../img/FotoEtapa3.jpg" alt="Paisaje Etapa 3" class="img-fluid rounded" style="max-height: 300px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCuatro">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCuatro" aria-expanded="false" aria-controls="collapseCuatro">
+                        Etapa 4: Laxe - Arou (17.7 km)
+                    </button>
+                </h2>
+                <div id="collapseCuatro" class="accordion-collapse collapse" aria-labelledby="headingCuatro" data-bs-parent="#acordeonEtapas">
+                    <div class="accordion-body">
+                        <strong>Dificultad: Baja.</strong> La etapa más corta e ideal para recuperar fuerzas. Pasamos por la famosa Praia de los Cristales y terminamos en el pintoresco pueblo de Arou.
+                        
+                        <div class="mt-3 mb-3">
+                            <a href="https://es.wikiloc.com/rutas-senderismo/camino-dos-faros-etapa-4-laxe-arou-17631479" target="_blank" class="btn btn-success btn-sm fw-bold shadow-sm">
+                                📍 Ver track oficial en Wikiloc
+                            </a>
+                        </div>
+
+                        <img src="../img/FotoEtapa4.jpg" alt="Paisaje Etapa 4" class="img-fluid rounded" style="max-height: 300px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCinco">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCinco" aria-expanded="false" aria-controls="collapseCinco">
+                        Etapa 5: Arou - Camariñas (22.7 km)
+                    </button>
+                </h2>
+                <div id="collapseCinco" class="accordion-collapse collapse" aria-labelledby="headingCinco" data-bs-parent="#acordeonEtapas">
+                    <div class="accordion-body">
+                        <strong>Dificultad: Media.</strong> El corazón de la Costa da Morte. Caminarás por el tramo más salvaje, visitando el Cementerio de los Ingleses y llegando al majestuoso Faro Vilán.
+                        
+                        <div class="mt-3 mb-3">
+                            <a href="https://es.wikiloc.com/rutas-senderismo/camino-dos-faros-etapa-5-tramo-parcial-de-arou-a-faro-vilan-104869946" target="_blank" class="btn btn-success btn-sm fw-bold shadow-sm">
+                                📍 Ver track oficial en Wikiloc
+                            </a>
+                        </div>
+
+                        <img src="../img/FotoEtapa5.jpg" alt="Paisaje Etapa 5" class="img-fluid rounded" style="max-height: 300px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeis">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeis" aria-expanded="false" aria-controls="collapseSeis">
+                        Etapa 6: Camariñas - Muxía (32.0 km)
+                    </button>
+                </h2>
+                <div id="collapseSeis" class="accordion-collapse collapse" aria-labelledby="headingSeis" data-bs-parent="#acordeonEtapas">
+                    <div class="accordion-body">
+                        <strong>Dificultad: Alta.</strong> La etapa más larga del camino. Rodea toda la ría para llegar a la mágica Punta de la Barca en Muxía, donde las olas rompen con una fuerza increíble.
+                        
+                        <div class="mt-3 mb-3">
+                            <a href="https://es.wikiloc.com/rutas-senderismo/camino-de-los-faros-etapa-6-camarnas-muxia-costa-da-morte-85517846" target="_blank" class="btn btn-success btn-sm fw-bold shadow-sm">
+                                📍 Ver track oficial en Wikiloc
+                            </a>
+                        </div>
+
+                        <img src="../img/FotoEtapa6.jpg" alt="Paisaje Etapa 6" class="img-fluid rounded" style="max-height: 300px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSiete">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSiete" aria-expanded="false" aria-controls="collapseSiete">
+                        Etapa 7: Muxía - Nemiña (24.3 km)
+                    </button>
+                </h2>
+                <div id="collapseSiete" class="accordion-collapse collapse" aria-labelledby="headingSiete" data-bs-parent="#acordeonEtapas">
+                    <div class="accordion-body">
+                        <strong>Dificultad: Media.</strong> Se abandona el interior de la ría y se vuelve al océano abierto. Recorre el imponente Cabo Touriñán (el punto más occidental de la España peninsular) hasta la playa surfera de Nemiña.
+                        
+                        <div class="mt-3 mb-3">
+                            <a href="https://es.wikiloc.com/rutas-senderismo/camino-dos-faros-etapa-7-muxia-nemina-28889840" target="_blank" class="btn btn-success btn-sm fw-bold shadow-sm">
+                                📍 Ver track oficial en Wikiloc
+                            </a>
+                        </div>
+
+                        <img src="../img/FotoEtapa7.jpg" alt="Paisaje Etapa 7" class="img-fluid rounded" style="max-height: 300px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOcho">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOcho" aria-expanded="false" aria-controls="collapseOcho">
+                        Etapa 8: Nemiña - Cabo Finisterre (26.2 km)
+                    </button>
+                </h2>
+                <div id="collapseOcho" class="accordion-collapse collapse" aria-labelledby="headingOcho" data-bs-parent="#acordeonEtapas">
+                    <div class="accordion-body">
+                        <strong>Dificultad: Alta.</strong> El gran final. Un recorrido exigente con desniveles que culmina en el mítico Faro de Finisterre, el fin del mundo antiguo, viendo la puesta de sol sobre el Atlántico.
+                        
+                        <div class="mt-3 mb-3">
+                            <a href="https://es.wikiloc.com/rutas-senderismo/camino-dos-faros-etapa-8-tourinan-praia-do-rostro-132019079" target="_blank" class="btn btn-success btn-sm fw-bold shadow-sm">
+                                📍 Ver track oficial en Wikiloc
+                            </a>
+                        </div>
+
+                        <img src="../img/FotoEtapa8.jpg" alt="Paisaje Etapa 8" class="img-fluid rounded" style="max-height: 300px; width: 100%; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <footer class="pie-pagina-ancho">
+    <footer class="pie-pagina-ancho mt-5">
         <div class="contenedor-footer">
             <div class="columna-footer">
                 <h3>Camiño dos Faros</h3>

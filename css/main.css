@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* scss/main.scss - Archivo principal que SASS traduce a CSS */
 /* scss/_variables.scss - Aquí guardamos nuestros colores y fuentes */
 * {
   margin: 0;
@@ -13,65 +12,91 @@ body {
   color: #333333;
 }
 
-.seccion-hero {
+.seccion-hero-fondo {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 80vh;
   display: flex;
-  flex-direction: column; /* MÓVIL PRIMERO: Uno arriba del otro */
+  justify-content: center;
   align-items: center;
-  text-align: center; /* Texto centrado para móvil */
-  padding: 3rem 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 2rem;
-  /* MAGIA RESPONSIVE: Si la pantalla es más ancha que una tablet (768px) */
+  padding: 2rem;
 }
-@media (min-width: 768px) {
-  .seccion-hero {
-    flex-direction: row; /* PC: Uno al lado del otro */
-    text-align: left; /* PC: Texto a la izquierda */
-    padding: 5rem 2rem;
-    gap: 3rem;
-  }
-}
-.seccion-hero .caja-texto {
-  flex: 1;
-}
-.seccion-hero .caja-texto h1 {
-  color: #0d6efd;
-  font-size: 2.2rem; /* Tamaño más humilde para celulares */
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  .seccion-hero .caja-texto h1 {
-    font-size: 3rem; /* Tamaño grande pero equilibrado para PC */
-  }
-}
-.seccion-hero .caja-texto p {
-  font-size: 1.1rem;
-  color: #333333;
-  line-height: 1.6;
-}
-.seccion-hero .caja-imagen {
-  flex: 1;
-  width: 100%;
-}
-.seccion-hero .caja-imagen .imagen-destacada {
-  width: 100%;
+.seccion-hero-fondo .caja-texto-superpuesta {
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 3rem;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 800px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+.seccion-hero-fondo .caja-texto-superpuesta h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .seccion-hero-fondo .caja-texto-superpuesta h1 {
+    font-size: 4rem;
+  }
+}
+.seccion-hero-fondo .caja-texto-superpuesta p {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+}
+@media (min-width: 768px) {
+  .seccion-hero-fondo .caja-texto-superpuesta p {
+    font-size: 1.4rem;
+  }
+}
+
+.header-etapas {
+  background-image: url("../img/FotoFondoEtapas.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+.header-etapas .caja-texto-superpuesta {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2.5rem;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  max-width: 850px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+.header-etapas .caja-texto-superpuesta h1 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.header-etapas .caja-texto-superpuesta p {
+  color: #dddddd;
+  font-size: 1.1rem;
+  margin-bottom: 0;
 }
 
 .pie-pagina-ancho {
   background-color: #212529;
   color: #ffffff;
-  /* Redujimos el padding (espacio interno) para que no sea tan alto */
   padding: 2rem 0 0.5rem 0;
-  margin-top: auto; /* Esto ayuda a empujarlo bien abajo */
+  margin-top: auto;
 }
 .pie-pagina-ancho .contenedor-footer {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Menos espacio entre columnas en móvil */
+  gap: 1.5rem;
   padding: 0 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -82,7 +107,7 @@ body {
     flex-direction: row;
     text-align: left;
     justify-content: space-between;
-    gap: 2rem; /* Espacio moderado en PC */
+    gap: 2rem;
   }
 }
 .pie-pagina-ancho .contenedor-footer .columna-footer {
@@ -90,30 +115,42 @@ body {
 }
 .pie-pagina-ancho .contenedor-footer .columna-footer h3 {
   color: #0d6efd;
-  font-size: 0.95rem; /* Títulos mucho más pequeños y sutiles */
+  font-size: 0.95rem;
   margin-bottom: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px; /* Un poquito de espacio entre letras para darle elegancia */
+  letter-spacing: 0.5px;
 }
 .pie-pagina-ancho .contenedor-footer .columna-footer p, .pie-pagina-ancho .contenedor-footer .columna-footer ul, .pie-pagina-ancho .contenedor-footer .columna-footer li {
-  font-size: 0.8rem; /* Letra tipo "letra chica" corporativa */
+  font-size: 0.8rem;
   color: #adb5bd;
   list-style: none;
-  margin-bottom: 0; /* Quitamos márgenes extra */
+  margin-bottom: 0;
 }
 .pie-pagina-ancho .contenedor-footer .columna-footer li {
-  margin-bottom: 0.3rem; /* Muy poquito espacio entre items de la lista */
+  margin-bottom: 0.3rem;
 }
 .pie-pagina-ancho .copyright-footer {
   text-align: center;
-  padding-top: 1rem; /* Menos espacio aquí también */
+  padding-top: 1rem;
   margin-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .pie-pagina-ancho .copyright-footer p {
-  font-size: 0.75rem; /* Texto de copyright súper pequeñito */
-  color: #6c757d; /* Un gris un poco más oscuro para que pase desapercibido */
+  font-size: 0.75rem;
+  color: #6c757d;
   margin: 0;
+}
+
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-brand img {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
+  margin-left: -10px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,8 @@
-/* scss/main.scss - Archivo principal que SASS traduce a CSS */
+//* scss/main.scss - Archivo principal que SASS traduce a CSS */
 
 // 1. IMPORTACIONES
-@import 'variables';
+@use 'variables'; 
+@use 'mixins'; // Asegúrate de tener el archivo _mixins.scss con el código que te pasé
 
 // 2. RESETEO GLOBAL
 * {
@@ -12,76 +13,92 @@
 
 // 3. ESTILOS BASE
 body {
-    font-family: $fuente-principal;
-    background-color: $color-fondo;
-    color: $color-texto;
+    font-family: variables.$fuente-principal;
+    background-color: variables.$color-fondo;
+    color: variables.$color-texto;
 }
 
 // 4. ESTILOS DEL INICIO (HERO)
-.seccion-hero {
-    display: flex;
-    flex-direction: column; /* MÓVIL PRIMERO: Uno arriba del otro */
-    align-items: center;
-    text-align: center; /* Texto centrado para móvil */
-    padding: 3rem 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 2rem;
+.seccion-hero-fondo {
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    min-height: 80vh;
+    @include mixins.flex-centrar; 
+    padding: 2rem;
 
-    /* MAGIA RESPONSIVE: Si la pantalla es más ancha que una tablet (768px) */
-    @media (min-width: 768px) {
-        flex-direction: row; /* PC: Uno al lado del otro */
-        text-align: left; /* PC: Texto a la izquierda */
-        padding: 5rem 2rem;
-        gap: 3rem;
-    }
-
-    .caja-texto {
-        flex: 1;
+    .caja-texto-superpuesta {
+        background-color: rgba(0, 0, 0, 0.65);
+        padding: 3rem;
+        border-radius: 15px;
+        text-align: center;
+        max-width: 800px;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
 
         h1 {
-            color: $color-primario;
-            font-size: 2.2rem; /* Tamaño más humilde para celulares */
-            margin-bottom: 1rem;
-            line-height: 1.2;
-
-            @media (min-width: 768px) {
-                font-size: 3rem; /* Tamaño grande pero equilibrado para PC */
-            }
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            @media (min-width: 768px) { font-size: 4rem; }
         }
 
         p {
-            font-size: 1.1rem;
-            color: $color-texto;
-            line-height: 1.6;
+            color: #e0e0e0;
+            font-size: 1.2rem;
+            @media (min-width: 768px) { font-size: 1.4rem; }
         }
     }
+}
+// 5. CABECERA PANORÁMICA PARA PÁGINAS INTERNAS (Etapas)
+.header-etapas {
+    
+    @include mixins.fondo-parallax("../img/FotoFondoEtapas.jpg"); 
+    
+    min-height: 40vh; // Un poco más baja que la home
+    @include mixins.flex-centrar;
+    padding: 2rem;
+    text-align: center;
 
-    .caja-imagen {
-        flex: 1;
-        width: 100%;
+    .caja-texto-superpuesta {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 2.5rem;
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+        max-width: 850px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 
-        .imagen-destacada {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            color: #dddddd;
+            font-size: 1.1rem;
+            margin-bottom: 0;
         }
     }
 }
 
-
-// 5. ESTILOS DEL FOOTER (VERSIÓN COMPACTA TIPO AMAZON)
+// 6. ESTILOS DEL FOOTER
 .pie-pagina-ancho {
-    background-color: $color-footer; 
+    background-color: variables.$color-footer;
     color: #ffffff; 
-    /* Redujimos el padding (espacio interno) para que no sea tan alto */
     padding: 2rem 0 0.5rem 0; 
-    margin-top: auto; /* Esto ayuda a empujarlo bien abajo */
+    margin-top: auto;
 
     .contenedor-footer {
         display: flex;
         flex-direction: column; 
-        gap: 1.5rem; /* Menos espacio entre columnas en móvil */
+        gap: 1.5rem;
         padding: 0 1.5rem;
         max-width: 1200px;
         margin: 0 auto;
@@ -91,43 +108,54 @@ body {
             flex-direction: row; 
             text-align: left; 
             justify-content: space-between;
-            gap: 2rem; /* Espacio moderado en PC */
+            gap: 2rem;
         }
 
         .columna-footer {
             flex: 1; 
 
             h3 {
-                color: $color-primario; 
-                font-size: 0.95rem; /* Títulos mucho más pequeños y sutiles */
+                color: variables.$color-primario;
+                font-size: 0.95rem;
                 margin-bottom: 0.8rem;
                 text-transform: uppercase;
-                letter-spacing: 0.5px; /* Un poquito de espacio entre letras para darle elegancia */
+                letter-spacing: 0.5px;
             }
 
             p, ul, li {
-                font-size: 0.8rem; /* Letra tipo "letra chica" corporativa */
+                font-size: 0.8rem;
                 color: #adb5bd; 
                 list-style: none; 
-                margin-bottom: 0; /* Quitamos márgenes extra */
+                margin-bottom: 0;
             }
 
             li {
-                margin-bottom: 0.3rem; /* Muy poquito espacio entre items de la lista */
+                margin-bottom: 0.3rem;
             }
         }
     }
 
     .copyright-footer {
         text-align: center;
-        padding-top: 1rem; /* Menos espacio aquí también */
+        padding-top: 1rem;
         margin-top: 1.5rem;
         border-top: 1px solid rgba(255, 255, 255, 0.1); 
         
         p {
-            font-size: 0.75rem; /* Texto de copyright súper pequeñito */
-            color: #6c757d; /* Un gris un poco más oscuro para que pase desapercibido */
+            font-size: 0.75rem;
+            color: #6c757d;
             margin: 0;
         }
+    }
+}
+
+// 7. ESTILOS DE BARRA DE NAVEGACIÓN (Navbar)
+.navbar-brand {
+    @include mixins.flex-centrar; // Centramos logo y texto
+    img {
+        height: 70px; 
+        width: 70px;
+        object-fit: contain;
+        margin-left: -10px;
     }
 }
