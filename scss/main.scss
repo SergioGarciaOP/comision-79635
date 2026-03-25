@@ -1,33 +1,25 @@
-//* scss/main.scss - Archivo principal que SASS traduce a CSS */
+@use 'variables';
+@use 'mixins';
 
-// 1. IMPORTACIONES
-@use 'variables'; 
-@use 'mixins'; // Asegúrate de tener el archivo _mixins.scss con el código que te pasé
-
-// 2. RESETEO GLOBAL
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-// 3. ESTILOS BASE
 body {
     font-family: variables.$fuente-principal;
     background-color: variables.$color-fondo;
     color: variables.$color-texto;
 }
 
-// 4. ESTILOS DEL INICIO (HERO)
 .seccion-hero-fondo {
-    
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
     min-height: 80vh;
-    @include mixins.flex-centrar; 
+    @include mixins.flex-centrar;
     padding: 2rem;
 
     .caja-texto-superpuesta {
@@ -37,29 +29,33 @@ body {
         text-align: center;
         max-width: 800px;
         backdrop-filter: blur(5px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 
         h1 {
             color: #ffffff;
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             font-weight: bold;
-            @media (min-width: 768px) { font-size: 4rem; }
+
+            @media (min-width: 768px) {
+                font-size: 4rem;
+            }
         }
 
         p {
             color: #e0e0e0;
             font-size: 1.2rem;
-            @media (min-width: 768px) { font-size: 1.4rem; }
+
+            @media (min-width: 768px) {
+                font-size: 1.4rem;
+            }
         }
     }
 }
-// 5. CABECERA PANORÁMICA PARA PÁGINAS INTERNAS (Etapas)
+
 .header-etapas {
-    
-    @include mixins.fondo-parallax("../img/FotoFondoEtapas.jpg"); 
-    
-    min-height: 40vh; // Un poco más baja que la home
+    @include mixins.fondo-parallax("../img/FotoFondoEtapas.jpg");
+    min-height: 40vh;
     @include mixins.flex-centrar;
     padding: 2rem;
     text-align: center;
@@ -70,7 +66,7 @@ body {
         border-radius: 15px;
         backdrop-filter: blur(5px);
         max-width: 850px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 
         h1 {
             color: #ffffff;
@@ -88,31 +84,30 @@ body {
     }
 }
 
-// 6. ESTILOS DEL FOOTER
 .pie-pagina-ancho {
     background-color: variables.$color-footer;
-    color: #ffffff; 
-    padding: 2rem 0 0.5rem 0; 
+    color: #ffffff;
+    padding: 2rem 0 0.5rem 0;
     margin-top: auto;
 
     .contenedor-footer {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         gap: 1.5rem;
         padding: 0 1.5rem;
         max-width: 1200px;
         margin: 0 auto;
-        text-align: center; 
+        text-align: center;
 
         @media (min-width: 768px) {
-            flex-direction: row; 
-            text-align: left; 
+            flex-direction: row;
+            text-align: left;
             justify-content: space-between;
             gap: 2rem;
         }
 
         .columna-footer {
-            flex: 1; 
+            flex: 1;
 
             h3 {
                 color: variables.$color-primario;
@@ -122,15 +117,20 @@ body {
                 letter-spacing: 0.5px;
             }
 
-            p, ul, li {
+            p,
+            li {
                 font-size: 0.8rem;
-                color: #adb5bd; 
-                list-style: none; 
-                margin-bottom: 0;
+                color: #adb5bd;
+                margin-bottom: 0.3rem;
+                padding-top: 0.5rem;
             }
 
-            li {
-                margin-bottom: 0.3rem;
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
             }
         }
     }
@@ -139,8 +139,8 @@ body {
         text-align: center;
         padding-top: 1rem;
         margin-top: 1.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1); 
-        
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+
         p {
             font-size: 0.75rem;
             color: #6c757d;
@@ -149,13 +149,53 @@ body {
     }
 }
 
-// 7. ESTILOS DE BARRA DE NAVEGACIÓN (Navbar)
 .navbar-brand {
-    @include mixins.flex-centrar; // Centramos logo y texto
+    @include mixins.flex-centrar;
+
     img {
-        height: 70px; 
+        height: 70px;
         width: 70px;
         object-fit: contain;
         margin-left: -10px;
     }
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: variables.$color-primario !important;
+    }
+}
+
+.card-numero {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.caja-texto-superpuesta {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.titulo-seccion {
+    color: variables.$color-primario;
+}
+.titulo-seccion-secundario {
+    color: variables.$color-primario;
 }
