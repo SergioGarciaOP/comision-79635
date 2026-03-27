@@ -1,0 +1,13 @@
+/* scss/base/_variables.scss */
+
+// COLORES PRINCIPALES (Personalizados para quitar el azul de Bootstrap)
+$color-primario: #29aa9b; // Un verde/azul marino profundo 
+$color-secundario: #e8621a; // naranja 
+$color-fondo: #f4f7f6;    //  gris para el fondo
+$color-texto: #2c3e50;    // Azul muy oscuro para el texto 
+$color-footer: #152d29;   // Un tono súper oscuro del color primario para el footer
+
+// TIPOGRAFÍAS
+$fuente-principal: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+$color-icono: $color-secundario; // Naranja para los iconos de las tarjetas

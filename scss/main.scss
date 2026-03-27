@@ -1,5 +1,6 @@
-@use 'variables';
-@use 'mixins';
+@use 'base/variables';
+@use 'base/mixins';
+@use 'layout/footer';
 
 * {
     margin: 0;
@@ -11,6 +12,26 @@ body {
     font-family: variables.$fuente-principal;
     background-color: variables.$color-fondo;
     color: variables.$color-texto;
+}
+
+// 1. Cambiar el color de los botones azules por defecto
+.btn-primary {
+    background-color: variables.$color-primario;
+    border-color: variables.$color-primario;
+    transition: all 0.3s ease;
+
+    &:hover {
+        // filter: brightness(0.85) oscurece el color un 15% al pasar el mouse
+        filter: brightness(0.85);
+        background-color: variables.$color-primario;
+        border-color: variables.$color-primario;
+        transform: translateY(-2px); // Pequeño saltito hacia arriba
+    }
+}
+
+// 2. Cambiar el color del Navbar 
+.bg-dark {
+    background-color: variables.$color-footer !important;
 }
 
 .seccion-hero-fondo {
@@ -84,70 +105,7 @@ body {
     }
 }
 
-.pie-pagina-ancho {
-    background-color: variables.$color-footer;
-    color: #ffffff;
-    padding: 2rem 0 0.5rem 0;
-    margin-top: auto;
 
-    .contenedor-footer {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 0 1.5rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-
-        @media (min-width: 768px) {
-            flex-direction: row;
-            text-align: left;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .columna-footer {
-            flex: 1;
-
-            h3 {
-                color: variables.$color-primario;
-                font-size: 0.95rem;
-                margin-bottom: 0.8rem;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-
-            p,
-            li {
-                font-size: 0.8rem;
-                color: #adb5bd;
-                margin-bottom: 0.3rem;
-                padding-top: 0.5rem;
-            }
-
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-            }
-        }
-    }
-
-    .copyright-footer {
-        text-align: center;
-        padding-top: 1rem;
-        margin-top: 1.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-        p {
-            font-size: 0.75rem;
-            color: #6c757d;
-            margin: 0;
-        }
-    }
-}
 
 .navbar-brand {
     @include mixins.flex-centrar;
@@ -196,6 +154,176 @@ body {
 .titulo-seccion {
     color: variables.$color-primario;
 }
+
 .titulo-seccion-secundario {
     color: variables.$color-primario;
+}
+
+// Hover en el botón principal
+.btn-primary {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(variables.$color-primario, 0.4);
+    }
+}
+
+// Imágenes del accordion
+.accordion-body img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 250px;
+    border-radius: 8px;
+
+    @media (min-width: 768px) {
+        max-height: 450px;
+    }
+}
+
+// Sección presentación
+.seccion-presentacion {
+    background-color: #f0f4f8;
+    padding: 5rem 1.5rem;
+
+    .presentacion-etiqueta {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 0.72rem;
+        color: variables.$color-icono;
+        font-weight: bold;
+        margin-bottom: 0.8rem;
+        display: block;
+    }
+
+    .presentacion-card {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+        border-left: 4px solid variables.$color-icono;
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+        }
+
+        .bi {
+            font-size: 2rem;
+            color: variables.$color-icono;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        h4 {
+            font-weight: bold;
+            color: variables.$color-texto;
+            margin-bottom: 0.6rem;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+    }
+}
+
+// Tarjetas de números
+.card-numero {
+    border-left: 4px solid variables.$color-icono;
+    border-radius: 8px;
+    padding: 2rem;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .bi {
+        font-size: 3rem;
+        color: variables.$color-icono;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+}
+
+// Sección números con imagen de fondo
+.seccion-numeros {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    @media (max-width: 991px) {
+        background-attachment: scroll;
+    }
+
+    .titulo-numeros {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+        color: #ffffff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .btn-numeros {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: 3px;
+        color: #ffffff;
+    }
+
+    .texto-naranja {
+        color: variables.$color-icono;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+}
+
+
+// ==========================================
+// GALERÍA DE POSTALES (FLEXBOX PARA RELLENAR HUECOS)
+// ==========================================
+
+.galeria-postales {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que las fotos bajen a la siguiente línea */
+    gap: 1.5rem;
+    padding: 1rem 0;
+
+    .postal {
+        /* pueden crecer para llenar el espacio vacío */
+        flex: 1 1 280px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            filter: brightness(0.9);
+
+            &:hover {
+                transform: scale(1.1);
+                filter: brightness(1.1);
+            }
+        }
+    }
 }

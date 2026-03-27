@@ -1,0 +1,66 @@
+@use '../base/variables';
+
+.pie-pagina-ancho {
+    background-color: variables.$color-footer;
+    color: #ffffff;
+    padding: 2rem 0 0.5rem 0;
+    margin-top: auto;
+
+    .contenedor-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            text-align: left;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .columna-footer {
+            flex: 1;
+
+            h3 {
+                color: variables.$color-primario;
+                font-size: 0.95rem;
+                margin-bottom: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            p,
+            li {
+                font-size: 0.8rem;
+                color: #adb5bd;
+                margin-bottom: 0.3rem;
+                padding-top: 0.5rem;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .copyright-footer {
+        text-align: center;
+        padding-top: 1rem;
+        margin-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+        p {
+            font-size: 0.75rem;
+            color: #6c757d;
+            margin: 0;
+        }
+    }
+}
